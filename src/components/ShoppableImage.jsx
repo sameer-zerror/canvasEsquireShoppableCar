@@ -107,7 +107,12 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
           <img src={imageDesktop} alt="" className={styles.heroImage} />
         </picture>
         <div className={styles.ClickBtnIndicator}>
-            <span>Click the <span className={styles.ClickBtn}><FaPlus/></span> icon for more information</span>
+            <span style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "5px"
+}}>Click the <span className={styles.ClickBtn}><FaPlus/></span> icon for more information</span>
         </div>
         {products.map((product, i) => (
           <div
