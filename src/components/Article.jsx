@@ -19,7 +19,7 @@ const products = [
     brand: "MOKOH",
     title: "Active Toning Essence",
     price: "59.00",
-    img: "https://cdn.esquireindia.co.in/editor-images/2025-07-18T07%3A15%3A35.776Z-6Mercedes%20G-Wagon%20EV%20%26%20Range%20Rover%2C%20Mahindra%20BE.06.jpg",
+    img: "/ivan-kazlouskij-7lYfuhnudpc-unsplash.jpg",
     link: "/products/active-toning-essence-white-rose-100-ml",
     // desc: "The E-Class has consistently been Mercedes-Benz India’s best-seller and its success only surged further when the long wheelbase (LWB) variant was introduced in 2017",
   },
@@ -31,7 +31,7 @@ const products = [
     price: "59.00",
     // img: "https://wonder-theme-beauty.myshopify.com/cdn/shop/products/esencja-Roza-PL.jpg?v=1660223483&width=300",
     link: "/products/active-toning-essence-white-rose-100-ml",
-    // desc: "The E-Class has consistently been Mercedes-Benz India’s best-seller and its success only surged further when the long wheelbase (LWB) variant was introduced in 2017",
+    desc: "The E-Class has consistently been Mercedes-Benz India’s best-seller and its success only surged further when the long wheelbase (LWB) variant was introduced in 2017",
   },
 ];
 const Article = () => {

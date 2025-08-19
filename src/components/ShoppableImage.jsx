@@ -18,7 +18,9 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
         gsap.set(tooltipEl, {
           x: "-42%",
           y: "-20%",
-          transform: "translate(-50%, 20%)",
+          //   x: "-3%",
+          //   y: "-20%",
+          transform: "translate(-50%, 0%)",
         });
       }
       if (index === 1) {
@@ -30,9 +32,9 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
       }
       if (index === 2) {
         gsap.set(tooltipEl, {
-          x: "-43%",
-          y: "-55%",
-          transform: "translate(-50%, 0%)",
+          x: "-92%",
+          y: "-20%",
+          //   transform: "translate(-50%, -50%)",
         });
       }
     });
@@ -107,18 +109,30 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
           <img src={imageDesktop} alt="" className={styles.heroImage} />
         </picture>
         <div className={styles.ClickBtnIndicator}>
-            <span style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "5px"
-}}>Click the <span className={styles.ClickBtn}><FaPlus/></span> icon for more information</span>
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "5px",
+            }}
+          >
+            Click the{" "}
+            <span className={styles.ClickBtn}>
+              <FaPlus />
+            </span>{" "}
+            icon for more information
+          </span>
         </div>
         {products.map((product, i) => (
           <div
             key={i}
             className={styles.dotWrapper}
-            style={{ top: `${product.y}%`, left: `${product.x}%` }}
+            style={{
+              top: `${product.y}%`,
+              left: `${product.x}%`,
+              zIndex: activeIndex === i ? "99" : "",
+            }}
             // onMouseEnter={() => setActiveIndex(i)}
             // onMouseLeave={() => setActiveIndex(null)}
             onClick={() => setActiveIndex(activeIndex === i ? null : i)}
@@ -144,31 +158,13 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
 
             {visibleIndex === i && (
               <div
-                // className={`${styles.tooltip} ${
-                //   activeIndex === i ? styles.tooltipActive : ""
-                // }`}
                 className={styles.tooltip}
                 ref={(el) => (tooltipRefs.current[i] = el)}
               >
                 <div className={styles.tooltipInner}>
-                  {/* <div className={styles.tooltipDot}>
-                    <div className={styles.dot}>
-                      <div className={styles.ring}></div>
-                      <div className={styles.circle}>
-                        <FaPlus
-                          style={{
-                            transition: "transform 0.3s ease",
-                            transform:
-                              activeIndex === i
-                                ? "rotate(45deg)"
-                                : "rotate(0deg)",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div> */}
                   <div className={styles.tooltipLink}>
-                    {i === 1 && (
+                    {/* If product has an image, show image block */}
+                    {product.img ? (
                       <img
                         src={product.img}
                         alt={product.title}
@@ -176,15 +172,18 @@ const ShoppableImage = ({ imageDesktop, imageMobile, products }) => {
                           activeIndex === i ? styles.tooltipContentActive : ""
                         }`}
                       />
-                    )}
+                    ) : null}
 
-                    <div
-                      className={`${styles.tooltipBody} ${
-                        activeIndex === i ? styles.tooltipContentActive : ""
-                      }`}
-                    >
-                      <span className={styles.carDesc}>{product.desc}</span>
-                    </div>
+                    {/* If product has text/desc, show text block */}
+                    {product.desc ? (
+                      <div
+                        className={`${styles.tooltipBody} ${
+                          activeIndex === i ? styles.tooltipContentActive : ""
+                        }`}
+                      >
+                        <span className={styles.carDesc}>{product.desc}</span>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
