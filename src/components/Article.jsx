@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import Canvass from "./Canvass";
 import ShoppableImage from "./ShoppableImage";
+import TransmissionSlider from "./TransmissionSlider";
 const products = [
   {
     x: 30,
@@ -688,6 +689,7 @@ const Article = () => {
                             </div>
                           </div>
                         </div>
+                        <TransmissionSlider/>
                         <div className="StoriesInfo_left_innercntr-full-width">
                           <div
                             className="related-post-container"
