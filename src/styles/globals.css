@@ -106,6 +106,10 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.p-0
+ {
+    padding: 0 !important;
+}
 /* .row>* {
     flex-shrink: 0;
     width: 100%;
@@ -3802,8 +3806,8 @@ a {
 .project__carousel,
 .project__list {
   transition: opacity 1s cubic-bezier(0.5, 0, 0, 1);
-  margin-left: -0 !important;
-  margin-right: -0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .project__carousel.fadeOut {

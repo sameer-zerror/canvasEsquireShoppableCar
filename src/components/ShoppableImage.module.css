@@ -51,7 +51,7 @@
   border-radius: 50%;
   background: rgb(255, 255, 255);
   animation: pulse 1.5s ease-in-out infinite;
-  border: 1px solid #000;
+  border: 1px solid #ffffff;
 }
 
 .ring::before {
@@ -88,8 +88,8 @@
   justify-content: center;
   /* border: 1px solid #000; */
 }
-.circle svg{
-    font-size: 0.8rem;
+.circle svg {
+  font-size: 0.8rem;
 }
 .tooltip {
   position: absolute;
@@ -155,10 +155,10 @@
   border: 1px solid #000;
   border-radius: 50%;
   display: inline-flex;
-      padding: 0.2rem;
+  padding: 0.1rem;
 }
-.ClickBtn svg{
-    font-size: 0.6rem;
+.ClickBtn svg {
+  font-size: 0.6rem;
 }
 
 /* .brand {
